@@ -96,6 +96,57 @@ void addAccount(std::map<int, Customer> &customers)
     std::cout << "Account with number " << account_number << " created successfully for customer " << customer_number << "!\n";
 }
 
+// Function to delete a customer
+void deleteCustomer(std::map<int, Customer> &customers)
+{
+    std::cout << "Enter the customer number to be deleted: ";
+    int customer_number{};
+    std::cin >> customer_number;
+
+    // Check if the customer exists
+    if (customers.find(customer_number) == customers.end())
+    {
+        std::cout << "Customer number " << customer_number << " does not exist. Please try again.\n";
+        return;
+    }
+
+    // Remove the customer from the map
+    customers.erase(customer_number);
+
+    std::cout << "Customer number " << customer_number << " deleted successfully!\n";
+}
+
+// Function to delete an account
+void deleteAccount(std::map<int, Customer> &customers)
+{
+    std::cout << "Enter the customer number: ";
+    int customer_number{};
+    std::cin >> customer_number;
+
+    // Check if the customer exists
+    if (customers.find(customer_number) == customers.end())
+    {
+        std::cout << "Customer number " << customer_number << " does not exist. Please add the customer first.\n";
+        return;
+    }
+
+    std::cout << "Enter account number to be deleted: ";
+    int account_number{};
+    std::cin >> account_number;
+
+    // Check if the account exists
+    if (customers[customer_number].accounts.find(account_number) == customers[customer_number].accounts.end())
+    {
+        std::cout << "Account number " << account_number << " does not exist for customer " << customer_number << ". Please try again.\n";
+        return;
+    }
+
+    // Remove the account from the map
+    customers[customer_number].accounts.erase(account_number);
+
+    std::cout << "Account number " << account_number << " deleted successfully for customer " << customer_number << "!\n";
+}
+
 // Function to log in to a customer's account
 void loginAccount(std::map<int, Customer> &customers)
 {

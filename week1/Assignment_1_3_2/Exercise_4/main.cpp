@@ -27,7 +27,9 @@ int main()
         std::cout << "2. Add a new account\n";
         std::cout << "3. Log in to account\n";
         std::cout << "4. Save account data\n";
-        std::cout << "5. Quit\n";
+        std::cout << "5. Delete a customer\n";
+        std::cout << "6. Delete an account\n";
+        std::cout << "7. Quit\n";
         std::cout << "Enter your choice: ";
         int choice{};
         std::cin >> choice;
@@ -47,10 +49,16 @@ int main()
             saveAccountData(customers);
             break;
         case 5:
-            std::cout << "Exiting the banking application..\n";
+            deleteCustomer(customers);
+            break;
+        case 6:
+            deleteAccount(customers);
+            break;
+        case 7:
+            std::cout << "\nExiting the banking application..\n";
             return 0;
         default:
-            std::cout << "Invalid choice. Please try again.\n";
+            std::cout << "\nInvalid choice. Please try again.\n";
         }
     }
 

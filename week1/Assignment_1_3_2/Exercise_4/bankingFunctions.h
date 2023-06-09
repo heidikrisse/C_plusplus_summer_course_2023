@@ -27,6 +27,8 @@ void withdrawMoney(Customer &customer, int account_number);
 void seeAccountBalance(const Customer &customer, int account_number);
 void addCustomer(std::map<int, Customer> &customers);
 void addAccount(std::map<int, Customer> &customers);
+void deleteCustomer(std::map<int, Customer> &customers);
+void deleteAccount(std::map<int, Customer> &customers);
 void loginAccount(std::map<int, Customer> &customers);
 void saveAccountData(const std::map<int, Customer> &customers);
 void loadAccountData(std::map<int, Customer> &customers);

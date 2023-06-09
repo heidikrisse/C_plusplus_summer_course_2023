@@ -15,9 +15,9 @@ int main()
 {
     printHeader();
 
-    std::map<int, Customer> customers; // Map to store multiple customers
+    Bank bank{}; // Bank instance
 
-    loadAccountData(customers);
+    loadAccountData(bank);
 
     // Main menu loop
     while (true)
@@ -37,22 +37,22 @@ int main()
         switch (choice)
         {
         case 1:
-            addCustomer(customers);
+            addCustomer(bank);
             break;
         case 2:
-            addAccount(customers);
+            addAccount(bank);
             break;
         case 3:
-            loginAccount(customers);
+            loginAccount(bank);
             break;
         case 4:
-            saveAccountData(customers);
+            saveAccountData(bank);
             break;
         case 5:
-            deleteCustomer(customers);
+            deleteCustomer(bank);
             break;
         case 6:
-            deleteAccount(customers);
+            deleteAccount(bank);
             break;
         case 7:
             std::cout << "\nExiting the banking application..\n";

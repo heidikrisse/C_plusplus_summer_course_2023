@@ -35,22 +35,21 @@ void seeAccountBalance(const Customer &customer, int account_number)
 }
 
 // Function to add a new customer
-void addCustomer(std::map<int, Customer> &customers)
+void addCustomer(Bank &bank)
 {
     std::cout << "Enter customer number: ";
     int customer_number{};
     std::cin >> customer_number;
 
     // Check if the customer number is already taken
-    if (customers.find(customer_number) != customers.end())
+    if (bank.customers.find(customer_number) != bank.customers.end())
     {
         std::cout << "The customer number " << customer_number << " is already taken. Please choose another available customer number.\n";
         return;
     }
 
     std::cin.ignore(); // Clear the newline character from the input buffer
-
-    Customer new_customer{};
+    Customer new_customer;
 
     std::cout << "Enter customer name: ";
     std::getline(std::cin, new_customer.name);
@@ -61,20 +60,20 @@ void addCustomer(std::map<int, Customer> &customers)
     std::cout << "Enter customer phone number: ";
     std::getline(std::cin, new_customer.phone_number);
 
-    customers[customer_number] = new_customer;
+    bank.customers[customer_number] = new_customer;
 
     std::cout << "Customer with number " << customer_number << " added successfully!\n";
 }
 
 // Function to add a new account for a customer
-void addAccount(std::map<int, Customer> &customers)
+void addAccount(Bank &bank)
 {
     std::cout << "Enter customer number: ";
     int customer_number{};
     std::cin >> customer_number;
 
     // Check if the customer exists
-    if (customers.find(customer_number) == customers.end())
+    if (bank.customers.find(customer_number) == bank.customers.end())
     {
         std::cout << "Customer number " << customer_number << " does not exist. Please add the customer first.\n";
         return;
@@ -85,79 +84,28 @@ void addAccount(std::map<int, Customer> &customers)
     std::cin >> account_number;
 
     // Check if the account number is already taken
-    if (customers[customer_number].accounts.find(account_number) != customers[customer_number].accounts.end())
+    if (bank.customers[customer_number].accounts.find(account_number) != bank.customers[customer_number].accounts.end())
     {
         std::cout << "This account number is already taken. Please choose another available account number.\n";
         return;
     }
 
-    customers[customer_number].accounts[account_number] = Account();
+    bank.customers[customer_number].accounts[account_number] = Account();
 
     std::cout << "Account with number " << account_number << " created successfully for customer " << customer_number << "!\n";
 }
 
-// Function to delete a customer
-void deleteCustomer(std::map<int, Customer> &customers)
+// Function to log in to an account
+void loginAccount(Bank &bank)
 {
-    std::cout << "Enter the customer number to be deleted: ";
-    int customer_number{};
-    std::cin >> customer_number;
-
-    // Check if the customer exists
-    if (customers.find(customer_number) == customers.end())
-    {
-        std::cout << "Customer number " << customer_number << " does not exist. Please try again.\n";
-        return;
-    }
-
-    // Remove the customer from the map
-    customers.erase(customer_number);
-
-    std::cout << "Customer number " << customer_number << " deleted successfully!\n";
-}
-
-// Function to delete an account
-void deleteAccount(std::map<int, Customer> &customers)
-{
-    std::cout << "Enter the customer number: ";
-    int customer_number{};
-    std::cin >> customer_number;
-
-    // Check if the customer exists
-    if (customers.find(customer_number) == customers.end())
-    {
-        std::cout << "Customer number " << customer_number << " does not exist. Please add the customer first.\n";
-        return;
-    }
-
-    std::cout << "Enter account number to be deleted: ";
-    int account_number{};
-    std::cin >> account_number;
-
-    // Check if the account exists
-    if (customers[customer_number].accounts.find(account_number) == customers[customer_number].accounts.end())
-    {
-        std::cout << "Account number " << account_number << " does not exist for customer " << customer_number << ". Please try again.\n";
-        return;
-    }
-
-    // Remove the account from the map
-    customers[customer_number].accounts.erase(account_number);
-
-    std::cout << "Account number " << account_number << " deleted successfully for customer " << customer_number << "!\n";
-}
-
-// Function to log in to a customer's account
-void loginAccount(std::map<int, Customer> &customers)
-{
-    int customer_number{};
     std::cout << "Enter customer number: ";
+    int customer_number{};
     std::cin >> customer_number;
 
     // Check if the customer exists
-    if (customers.find(customer_number) == customers.end())
+    if (bank.customers.find(customer_number) == bank.customers.end())
     {
-        std::cout << "Customer number " << customer_number << " does not exist. Please add the customer first.\n";
+        std::cout << "Customer number " << customer_number << " does not exist.\n";
         return;
     }
 
@@ -166,48 +114,93 @@ void loginAccount(std::map<int, Customer> &customers)
     std::cin >> account_number;
 
     // Check if the account exists
-    if (customers[customer_number].accounts.find(account_number) == customers[customer_number].accounts.end())
+    if (bank.customers[customer_number].accounts.find(account_number) == bank.customers[customer_number].accounts.end())
     {
-        std::cout << "Account number " << account_number << " does not exist for customer " << customer_number << ". Please try again.\n";
+        std::cout << "Account number " << account_number << " does not exist.\n";
         return;
     }
 
-    std::cout << "Logged in to account " << account_number << " for customer " << customer_number << ".\n";
-
-    // Inner menu loop for account operations
+    // Account menu loop
     while (true)
     {
         std::cout << "\nAccount menu:\n";
-        std::cout << "1. Add money\n";
-        std::cout << "2. Withdraw money\n";
+        std::cout << "1. Add money to the account\n";
+        std::cout << "2. Withdraw money from the account\n";
         std::cout << "3. See account balance\n";
-        std::cout << "4. Log out\n";
+        std::cout << "4. Log out from the account\n";
         std::cout << "Enter your choice: ";
-        int account_choice{};
-        std::cin >> account_choice;
+        int choice{};
+        std::cin >> choice;
 
-        switch (account_choice)
+        switch (choice)
         {
         case 1:
-            addMoney(customers[customer_number], account_number);
+            addMoney(bank.customers[customer_number], account_number);
             break;
         case 2:
-            withdrawMoney(customers[customer_number], account_number);
+            withdrawMoney(bank.customers[customer_number], account_number);
             break;
         case 3:
-            seeAccountBalance(customers[customer_number], account_number);
+            seeAccountBalance(bank.customers[customer_number], account_number);
             break;
         case 4:
-            std::cout << "Logged out from account " << account_number << " for customer " << customer_number << ".\n";
+            std::cout << "\nLogging out from the account..\n";
             return;
         default:
-            std::cout << "Invalid choice. Please try again.\n";
+            std::cout << "\nInvalid choice. Please try again.\n";
         }
     }
 }
 
+// Function to delete a customer
+void deleteCustomer(Bank &bank)
+{
+    std::cout << "Enter customer number: ";
+    int customer_number{};
+    std::cin >> customer_number;
+
+    // Check if the customer exists
+    if (bank.customers.find(customer_number) == bank.customers.end())
+    {
+        std::cout << "Customer number " << customer_number << " does not exist.\n";
+        return;
+    }
+
+    bank.customers.erase(customer_number);
+    std::cout << "Customer with number " << customer_number << " deleted successfully!\n";
+}
+
+// Function to delete an account
+void deleteAccount(Bank &bank)
+{
+    std::cout << "Enter customer number: ";
+    int customer_number{};
+    std::cin >> customer_number;
+
+    // Check if the customer exists
+    if (bank.customers.find(customer_number) == bank.customers.end())
+    {
+        std::cout << "Customer number " << customer_number << " does not exist.\n";
+        return;
+    }
+
+    std::cout << "Enter account number: ";
+    int account_number{};
+    std::cin >> account_number;
+
+    // Check if the account exists
+    if (bank.customers[customer_number].accounts.find(account_number) == bank.customers[customer_number].accounts.end())
+    {
+        std::cout << "Account number " << account_number << " does not exist.\n";
+        return;
+    }
+
+    bank.customers[customer_number].accounts.erase(account_number);
+    std::cout << "Account with number " << account_number << " deleted successfully!\n";
+}
+
 // Function to save account data to a file
-void saveAccountData(const std::map<int, Customer> &customers)
+void saveAccountData(const Bank &bank)
 {
     std::ofstream outputFile("account_data.txt");
 
@@ -217,7 +210,7 @@ void saveAccountData(const std::map<int, Customer> &customers)
         return;
     }
 
-    for (const auto &[customer_number, customer] : customers)
+    for (const auto &[customer_number, customer] : bank.customers)
     {
         outputFile << "Customer Number: " << customer_number << "\n";
         outputFile << "Name: " << customer.name << "\n";
@@ -236,8 +229,8 @@ void saveAccountData(const std::map<int, Customer> &customers)
     std::cout << "Account data saved to file.\n";
 }
 
-// Function to load account data from a file and create a new file if it doesn exist
-void loadAccountData(std::map<int, Customer> &customers)
+// Function to load account data from a file and create a new file if it doesn't exist
+void loadAccountData(Bank &bank)
 {
     std::ifstream inputFile("account_data.txt");
 
@@ -257,7 +250,7 @@ void loadAccountData(std::map<int, Customer> &customers)
         return;
     }
 
-    customers.clear();
+    bank.customers.clear();
 
     std::string line{};
     int customer_number{};
@@ -274,7 +267,7 @@ void loadAccountData(std::map<int, Customer> &customers)
             if (customer_number != 0)
             {
                 // Add the previous customer to the map
-                customers[customer_number] = {name, address, phone_number};
+                bank.customers[customer_number] = {name, address, phone_number};
             }
 
             // Extract the customer number
@@ -306,14 +299,14 @@ void loadAccountData(std::map<int, Customer> &customers)
             balance = std::stod(line.substr(9));
 
             // Add the account to the current customer
-            customers[customer_number].accounts[account_number] = {balance};
+            bank.customers[customer_number].accounts[account_number] = {balance};
         }
     }
 
     // Add the last customer to the map
     if (customer_number != 0)
     {
-        customers[customer_number] = {name, address, phone_number};
+        bank.customers[customer_number] = {name, address, phone_number};
     }
 
     std::cout << "Account data loaded from file.\n";

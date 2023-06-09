@@ -21,16 +21,22 @@ struct Customer
     std::map<int, Account> accounts{}; // Map to store multiple accounts
 };
 
+// Structure to store bank information
+struct Bank
+{
+    std::map<int, Customer> customers{}; // Map to store multiple customers
+};
+
 // Function declarations
 void addMoney(Customer &customer, int account_number);
 void withdrawMoney(Customer &customer, int account_number);
 void seeAccountBalance(const Customer &customer, int account_number);
-void addCustomer(std::map<int, Customer> &customers);
-void addAccount(std::map<int, Customer> &customers);
-void deleteCustomer(std::map<int, Customer> &customers);
-void deleteAccount(std::map<int, Customer> &customers);
-void loginAccount(std::map<int, Customer> &customers);
-void saveAccountData(const std::map<int, Customer> &customers);
-void loadAccountData(std::map<int, Customer> &customers);
+void addCustomer(Bank &bank);
+void addAccount(Bank &bank);
+void deleteCustomer(Bank &bank);
+void deleteAccount(Bank &bank);
+void loginAccount(Bank &bank);
+void saveAccountData(const Bank &bank);
+void loadAccountData(Bank &bank);
 
 #endif // BANKING_FUNCTIONS_H

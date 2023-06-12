@@ -1,3 +1,6 @@
+/* A program to create a new program that will create a vector of random
+ * size, filled with random numbers between 1 and 100 and
+ * add a function that will output the smallest and largest number in the array.*/
 #include <iostream>
 #include <cstdlib> // for rand() and srand()
 #include <ctime>

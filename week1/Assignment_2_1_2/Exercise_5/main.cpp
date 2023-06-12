@@ -1,3 +1,5 @@
+/* A program to create a new program that will create a vector of random
+ * size, filled with random numbers between 1 and 100.*/
 #include <iostream>
 #include <vector>
 #include <cstdlib> // for rand() and srand()

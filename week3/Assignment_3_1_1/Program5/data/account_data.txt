@@ -1,0 +1,21 @@
+Customer Number: 2
+Name: Liisa
+Address: Ihmemaa 3
+Phone Number: 040 111 1111
+Account Number: 1234
+Balance: 100
+
+Customer Number: 3
+Name: Iron Man
+Address: Stark Tower Complex, New York
+Phone Number: 040 222 2222
+Account Number: 5678
+Balance: 145
+
+Customer Number: 4
+Name: Vainu
+Address: Vahtitorni, Jännälahti
+Phone Number: 040 333 3333
+Account Number: 9123
+Balance: 837
+

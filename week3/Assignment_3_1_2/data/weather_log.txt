@@ -1,0 +1,120 @@
+Temperature: -22.2438 C
+Humidity: 68.9466 %
+Wind Speed: 15.5056 km/h
+Atmospheric Pressure: 1037.13 hPa
+
+Temperature: -6.19468 C
+Humidity: 66.1886 %
+Wind Speed: 41.6569 km/h
+Atmospheric Pressure: 992.814 hPa
+
+Temperature: 25.1509 C
+Humidity: 41.7689 %
+Wind Speed: 39.4376 km/h
+Atmospheric Pressure: 953.897 hPa
+
+Temperature: -25.9536 C
+Humidity: 20.6995 %
+Wind Speed: 64.2227 km/h
+Atmospheric Pressure: 971.081 hPa
+
+Temperature: -11.8819 C
+Humidity: 5.04202 %
+Wind Speed: 22.947 km/h
+Atmospheric Pressure: 992.239 hPa
+
+Temperature: -22.6652 C
+Humidity: 75.6666 %
+Wind Speed: 38.4605 km/h
+Atmospheric Pressure: 1018.47 hPa
+
+Temperature: -13.7595 C
+Humidity: 23.7834 %
+Wind Speed: 70.0158 km/h
+Atmospheric Pressure: 1041.04 hPa
+
+Temperature: 15.2692 C
+Humidity: 31.6357 %
+Wind Speed: 81.3706 km/h
+Atmospheric Pressure: 1004.03 hPa
+
+Temperature: 26.7913 C
+Humidity: 2.18323 %
+Wind Speed: 67.079 km/h
+Atmospheric Pressure: 1005.84 hPa
+
+Temperature: -12.0127 C
+Humidity: 77.8858 %
+Wind Speed: 104.758 km/h
+Atmospheric Pressure: 1001.57 hPa
+
+Temperature: 4.37459 C
+Humidity: 61.6069 %
+Wind Speed: 18.6479 km/h
+Atmospheric Pressure: 1021.8 hPa
+
+Temperature: -25.8347 C
+Humidity: 4.0006 %
+Wind Speed: 69.5719 km/h
+Atmospheric Pressure: 981.257 hPa
+
+Temperature: -29.2228 C
+Humidity: 80.2572 %
+Wind Speed: 17.7703 km/h
+Atmospheric Pressure: 1002.34 hPa
+
+Temperature: 1.74555 C
+Humidity: 57.6313 %
+Wind Speed: 50.9295 km/h
+Atmospheric Pressure: 956.948 hPa
+
+Temperature: 18.2115 C
+Humidity: 42.3571 %
+Wind Speed: 52.2352 km/h
+Atmospheric Pressure: 958.652 hPa
+
+Temperature: 0.724046 C
+Humidity: 52.5281 %
+Wind Speed: 134.708 km/h
+Atmospheric Pressure: 964.235 hPa
+
+Temperature: 28.5884 C
+Humidity: 67.6528 %
+Wind Speed: 74.8895 km/h
+Atmospheric Pressure: 1047.05 hPa
+
+Temperature: -20.6586 C
+Humidity: 21.5027 %
+Wind Speed: 27.9005 km/h
+Atmospheric Pressure: 1029.36 hPa
+
+Temperature: -2.76388 C
+Humidity: 88.4601 %
+Wind Speed: 142.109 km/h
+Atmospheric Pressure: 1016.87 hPa
+
+Temperature: 2.24003 C
+Humidity: 67.9647 %
+Wind Speed: 84.8772 km/h
+Atmospheric Pressure: 1026.83 hPa
+
+Temperature: 24.4841 C
+Humidity: 36.8344 %
+Wind Speed: 137.015 km/h
+Atmospheric Pressure: 1028.65 hPa
+
+Temperature: 3.23405 C
+Humidity: 41.5303 %
+Wind Speed: 9.52264 km/h
+Atmospheric Pressure: 977.933 hPa
+
+Temperature: 28.3521 C
+Humidity: 71.6794 %
+Wind Speed: 25.9653 km/h
+Atmospheric Pressure: 1039.2 hPa
+
+Temperature: -6.63574 C
+Humidity: 73.1972 %
+Wind Speed: 70.4308 km/h
+Atmospheric Pressure: 1009.87 hPa
+

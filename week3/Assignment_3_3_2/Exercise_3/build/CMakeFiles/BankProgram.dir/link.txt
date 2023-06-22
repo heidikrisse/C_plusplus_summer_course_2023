@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/BankProgram.dir/main.cpp.o -o BankProgram  src/libbanking_functions.a src/libaccount_functions.a src/libdatabase.a -lstdc++fs 

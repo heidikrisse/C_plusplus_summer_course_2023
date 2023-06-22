@@ -1,0 +1,25 @@
+// basic_math_functions.cpp
+#include "../include/basic_math_functions.h"
+#include <stdexcept> // for std::invalid_argument
+
+double add(double a, double b)
+{
+    return a + b;
+}
+
+double subtract(double a, double b)
+{
+    return a - b;
+}
+
+double multiply(double a, double b)
+{
+    return a * b;
+}
+
+double divide(double a, double b)
+{
+    if (b == 0.0)
+        throw std::invalid_argument("You cannot divide by zero!");
+    return a / b;
+}

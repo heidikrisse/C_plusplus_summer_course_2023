@@ -1,0 +1,4 @@
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR})
+
+add_executable(bank_unit_tests_results bank_unit_tests.cpp)
+target_link_libraries(bank_unit_tests_results PUBLIC banking_functions account_functions database)

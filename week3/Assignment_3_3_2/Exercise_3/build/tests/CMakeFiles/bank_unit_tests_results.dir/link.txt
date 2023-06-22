@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/bank_unit_tests_results.dir/bank_unit_tests.cpp.o -o ../../tests/bank_unit_tests_results  ../src/libbanking_functions.a ../src/libaccount_functions.a ../src/libdatabase.a 

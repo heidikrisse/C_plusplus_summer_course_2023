@@ -1,4 +1,6 @@
+// main.cpp
 #include "include/banking_functions.h"
+#include "include/database.h"
 #include <iostream>
 
 // Function to print the program header
@@ -28,10 +30,9 @@ int main()
             std::cout << "1. Add a new customer\n";
             std::cout << "2. Add a new account\n";
             std::cout << "3. Log in to account\n";
-            std::cout << "4. Save account data\n";
-            std::cout << "5. Delete a customer\n";
-            std::cout << "6. Delete an account\n";
-            std::cout << "7. Quit\n";
+            std::cout << "4. Delete a customer\n";
+            std::cout << "5. Delete an account\n";
+            std::cout << "6. Quit\n";
             std::cout << "Enter your choice: ";
             int choice{};
             std::cin >> choice;
@@ -48,15 +49,12 @@ int main()
                 login_account(bank);
                 break;
             case 4:
-                save_account_data(bank);
-                break;
-            case 5:
                 delete_customer(bank);
                 break;
-            case 6:
+            case 5:
                 delete_account(bank);
                 break;
-            case 7:
+            case 6:
                 std::cout << "\nExiting the banking application..\n";
                 return 0;
             default:

@@ -2,6 +2,8 @@ Customer Number: 2
 Name: Liisa
 Address: Ihmemaa 3
 Phone Number: 040 111 1111
+Account Number: 1010
+Balance: 0
 Account Number: 1234
 Balance: 100
 

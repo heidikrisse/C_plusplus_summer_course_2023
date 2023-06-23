@@ -1,0 +1,1 @@
+add_library(finance_management_system STATIC finance_management_system.cpp)

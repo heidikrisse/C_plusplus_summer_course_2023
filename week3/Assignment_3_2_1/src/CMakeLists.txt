@@ -1,0 +1,2 @@
+add_library(route_generator STATIC route_generator.cpp)
+add_library(shortest_route_calculator STATIC shortest_route_calculator.cpp)

@@ -76,12 +76,16 @@ void play_towers_of_hanoi(int number_of_disks)
             std::cout << "\nEnter the source tower (A, B, or C), or 'Q' to quit: ";
             char source{};
             std::cin >> source;
+
             // Check if the user wants to quit
             if (source == 'Q' || source == 'q')
                 break;
+
             std::cout << "Enter the destination tower (A, B, or C), or 'Q' to quit: ";
             char destination{};
             std::cin >> destination;
+
+            // Check if the user wants to quit
             if (destination == 'Q' || destination == 'q')
                 break;
 
@@ -104,7 +108,7 @@ void play_towers_of_hanoi(int number_of_disks)
                 break;
             case 'Q':
             case 'q':
-                break;
+                std::exit(0); // Quit the program
             default:
                 std::cout << "Invalid tower! Please try again.\n";
                 continue;
@@ -126,7 +130,7 @@ void play_towers_of_hanoi(int number_of_disks)
                 break;
             case 'Q':
             case 'q':
-                break;
+                std::exit(0); // Quit the program
             default:
                 std::cout << "Invalid tower! Please try again.\n";
                 continue;

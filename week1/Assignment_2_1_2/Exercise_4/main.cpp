@@ -4,17 +4,20 @@
 #include <iostream>
 #include <list>
 #include <algorithm> // for std::adjacent_find
-#include <cstdlib>   // for rand() and srand()
-#include <ctime>
+#include <random>    // for std::mt19937 and std::uniform_int_distribution
 
 // Function to generate a list with 10 random elements
 std::list<int> generate_random_list()
 {
-    srand(std::time(nullptr));
+    std::random_device rd;  // Obtain a random number from hardware
+    std::mt19937 rng(rd()); // Initialize Mersenne Twister pseudorandom number generator
+
+    std::uniform_int_distribution<int> dist(0, 99); // Uniform distribution between 0 and 99
+
     std::list<int> lst;
     for (int i{0}; i < 10; ++i)
     {
-        lst.push_back(rand() % 100);
+        lst.push_back(dist(rng)); // Generate random numbers with the uniform distribution
     }
     return lst;
 }
@@ -39,7 +42,7 @@ int main()
     auto it{std::adjacent_find(lst.begin(), lst.end())};
     if (it != lst.end())
     {
-        std::cout << "First two adjacent elements that are equal are: " << *it << " " << *(++it) << "\n";
+        std::cout << "First two adjacent elements that are equal are: " << *it << " " << *(std::next(it)) << "\n";
     }
     else
     {

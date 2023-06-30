@@ -3,17 +3,19 @@
 #include <iostream>
 #include <vector>
 #include <algorithm> // for std::partition
-#include <cstdlib>   // for rand() and srand()
-#include <ctime>
+#include <random>    // for std::mt19937 and std::uniform_int_distribution
 
 // Function to generate a random vector of the given size
 std::vector<int> generate_random_vector(size_t size)
 {
-    srand(std::time(nullptr));
+    std::random_device rd; // to seed the Mersenne twister engine
+    std::mt19937 mt(rd());
+    std::uniform_int_distribution<int> dist(0, 99); // uniformly distributed in [0, 99]
+
     std::vector<int> vec(size);
     for (int &num : vec)
     {
-        num = rand() % 100;
+        num = dist(mt);
     }
     return vec;
 }

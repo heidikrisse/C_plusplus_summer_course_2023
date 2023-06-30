@@ -2,18 +2,19 @@
  * size, filled with random numbers between 1 and 100 and
  * add a function that will output the smallest and largest number in the array.*/
 #include <iostream>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>
-#include <algorithm> // for std::minmax_element
+#include <random> // for std::mt19937 and std::uniform_int_distribution
 
 // Function to generate a random array of the given size, filled with random numbers between 1 and 100
 int *generate_random_array(size_t size)
 {
-    srand(std::time(nullptr));
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<int> num_dist(1, 100); // uniform distribution between 1 and 100
+
     int *arr{new int[size]};
     for (size_t i{0}; i < size; ++i)
     {
-        arr[i] = rand() % 100 + 1; // Random number between 1 and 100
+        arr[i] = num_dist(rng); // Random number between 1 and 100
     }
     return arr;
 }
@@ -54,7 +55,11 @@ void find_min_max_values(const int *arr, size_t size)
 int main()
 {
     // Random size between 1 and 10
-    size_t size{static_cast<size_t>(rand() % 10 + 1)};
+    std::random_device rd;
+    std::mt19937 rng(rd());
+    std::uniform_int_distribution<int> size_dist(1, 10);
+
+    size_t size = static_cast<size_t>(size_dist(rng));
     int *arr{generate_random_array(size)};
 
     print_array(arr, size);

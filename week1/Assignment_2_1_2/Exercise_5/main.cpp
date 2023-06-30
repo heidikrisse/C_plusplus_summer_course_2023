@@ -2,20 +2,23 @@
  * size, filled with random numbers between 1 and 100.*/
 #include <iostream>
 #include <vector>
-#include <cstdlib> // for rand() and srand()
-#include <ctime>
+#include <random> // for std::mt19937 and std::uniform_int_distribution
 
 // Function to generate a vector of random size, filled with random numbers between 1 and 100
 std::vector<int> generate_random_vector()
 {
-    srand(std::time(nullptr));
+    std::random_device rd;                               // Will be used to obtain a seed for the random number engine
+    std::mt19937 rng(rd());                              // Mersenne Twister 19937 generator, seeded with rd()
+    std::uniform_int_distribution<int> size_dist(1, 10); // uniform distribution between 1 and 10, inclusive
+    std::uniform_int_distribution<int> num_dist(1, 100); // uniform distribution between 1 and 100, inclusive
+
     // Random size between 1 and 10 to limit the maximum size of the vector
-    size_t size{static_cast<size_t>(rand() % 10 + 1)};
+    size_t size = static_cast<size_t>(size_dist(rng));
     std::vector<int> vec(size);
     for (int &num : vec)
     {
         // Random number between 1 and 100
-        num = rand() % 100 + 1;
+        num = num_dist(rng);
     }
     return vec;
 }

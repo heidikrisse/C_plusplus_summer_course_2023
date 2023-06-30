@@ -1,0 +1,1 @@
+add_library(greatest_common_divisor STATIC greatest_common_divisor.cpp)

@@ -35,5 +35,8 @@ void Order::advance_status()
     case Status::SHIPPED:
         status = Status::DELIVERED;
         break;
+    case Status::DELIVERED:
+        std::cout << "Order has already been delivered.\n";
+        break;
     }
 }

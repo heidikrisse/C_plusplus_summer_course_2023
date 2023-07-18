@@ -31,8 +31,7 @@ public:
     explicit TaggedUnion(const char *value);
     explicit TaggedUnion(double value);
 
-    // Destructor
-    ~TaggedUnion();
+    // No destructor needed: TaggedUnion class doesn't allocate any dynamic memory or resources that need to be explicitly released.
 
     // Setters
     void set_person(char first_letter);

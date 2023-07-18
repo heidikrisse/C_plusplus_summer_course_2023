@@ -20,10 +20,6 @@ TaggedUnion::TaggedUnion(double value) : type(TaggedUnionType::alien), alien_eye
 {
 }
 
-TaggedUnion::~TaggedUnion()
-{
-}
-
 void TaggedUnion::set_person(char first_letter)
 {
     type = TaggedUnionType::person;

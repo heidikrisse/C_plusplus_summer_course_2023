@@ -29,6 +29,7 @@ public:
     // Constructors with explicit specifier
     explicit TaggedUnion(int value);
     explicit TaggedUnion(const char *value);
+    explicit TaggedUnion(const std::string &value);
     explicit TaggedUnion(double value);
 
     // No destructor needed: TaggedUnion class doesn't allocate any dynamic memory or resources that need to be explicitly released.

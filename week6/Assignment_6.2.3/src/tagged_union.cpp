@@ -16,6 +16,14 @@ TaggedUnion::TaggedUnion(const char *value) : type(TaggedUnionType::person), fir
     }
 }
 
+TaggedUnion::TaggedUnion(const std::string &value) : type(TaggedUnionType::person), first_letter_of_person_name('\0')
+{
+    if (!value.empty())
+    {
+        first_letter_of_person_name = value[0];
+    }
+}
+
 TaggedUnion::TaggedUnion(double value) : type(TaggedUnionType::alien), alien_eye_light_wavelength(static_cast<float>(value))
 {
 }

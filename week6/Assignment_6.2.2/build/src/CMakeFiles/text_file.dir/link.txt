@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtext_file.a CMakeFiles/text_file.dir/text_file.cpp.o
+/usr/bin/ranlib libtext_file.a

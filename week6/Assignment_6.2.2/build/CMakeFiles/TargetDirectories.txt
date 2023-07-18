@@ -1,0 +1,6 @@
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/CMakeFiles/TextFile.dir
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/CMakeFiles/edit_cache.dir
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/CMakeFiles/rebuild_cache.dir
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/src/CMakeFiles/text_file.dir
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/src/CMakeFiles/edit_cache.dir
+/home/heidi/projects/C_plusplus_summer_course_2023/week6/Assignment_6.2.2/build/src/CMakeFiles/rebuild_cache.dir

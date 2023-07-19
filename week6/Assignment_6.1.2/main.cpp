@@ -14,7 +14,7 @@ int main()
         std::cout << "Robot ID: " << tagged_union.get_robot() << "\n";
     }
 
-    // Set type to 'person' and first letter to 'A'
+    // Set type to 'person' and first letter to 'H'
     tagged_union.set_person('H');
 
     // If the type is "person", access the value

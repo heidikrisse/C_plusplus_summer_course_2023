@@ -8,10 +8,10 @@ void TaggedUnion::set_person(char first_letter)
     type = TaggedUnionType::person;
     first_letter_of_person_name = first_letter;
 }
-void TaggedUnion::set_robot(int ID)
+void TaggedUnion::set_robot(int id)
 {
     type = TaggedUnionType::robot;
-    robot_ID = ID;
+    robot_id = id;
 }
 
 void TaggedUnion::set_alien(float wavelength)
@@ -39,7 +39,7 @@ int TaggedUnion::get_robot() const
         throw std::runtime_error("Invalid type access.");
     }
     */
-    return robot_ID;
+    return robot_id;
 }
 
 float TaggedUnion::get_alien() const

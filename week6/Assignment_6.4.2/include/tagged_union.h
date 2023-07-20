@@ -19,15 +19,15 @@ private:
     union
     {
         char first_letter_of_person_name;
-        int robot_ID;
+        int robot_id;
         float alien_eye_light_wavelength;
     };
 
 public:
     // Setters
-    void set_person(char first_letter);
-    void set_robot(int ID);
-    void set_alien(float wavelength);
+    void set_person(const char first_letter);
+    void set_robot(const int id);
+    void set_alien(const float wavelength);
 
     // Getters
     char get_person() const;

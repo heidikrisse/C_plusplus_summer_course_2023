@@ -10,10 +10,10 @@ void TaggedUnion::set_person(char first_letter)
     first_letter_of_person_name = first_letter;
 }
 
-void TaggedUnion::set_robot(int ID)
+void TaggedUnion::set_robot(int id)
 {
     type = TaggedUnionType::robot;
-    robot_ID = ID;
+    robot_id = id;
 }
 
 void TaggedUnion::set_alien(float wavelength)
@@ -31,7 +31,7 @@ char TaggedUnion::get_person() const
 int TaggedUnion::get_robot() const
 {
     assert(type == TaggedUnionType::robot);
-    return robot_ID;
+    return robot_id;
 }
 
 float TaggedUnion::get_alien() const

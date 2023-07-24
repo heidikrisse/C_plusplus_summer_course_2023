@@ -16,5 +16,5 @@ add_subdirectory(src)
 add_subdirectory(tests)
 
 target_link_libraries(${PROJECT_NAME}
-    PUBLIC grid
+    PUBLIC grid user_ui
 )

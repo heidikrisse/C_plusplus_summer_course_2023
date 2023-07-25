@@ -9,11 +9,5 @@ add_compile_options(-Wall -Wextra -Wpedantic)
 
 add_executable(${PROJECT_NAME} main.cpp)
 
-add_subdirectory(src)
-
 # Include directories where header files are located
 include_directories(${PROJECT_SOURCE_DIR}/include)
-
-target_link_libraries(${PROJECT_NAME}
-    PUBLIC exercise1 exercise2 exercise3 exercise4 exercise5
-)

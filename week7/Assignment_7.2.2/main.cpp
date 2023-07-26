@@ -42,7 +42,8 @@ int main()
 
     std::cout << "***** Testing Exercise 2: *****\n\n";
 
-    VariadicClass variadic_class(1, 2, 3, 4, 5); //
+    // This would be deduced as VariadicClass<5>
+    VariadicClass variadic_class(1, 2, 3, 4, 5);
 
     std::cout << "Number of arguments: " << variadic_class.number_of_arguments() << "\n\n";
 

@@ -1,0 +1,67 @@
+# Assignment 8.4.1 Exercise 2
+
+Add unit tests that use the type you created previously, that counts its constructor calls as your element type.  (Assignment 8.2.1 exercise 2)
+
+Make sure that calls to the constructors equal the calls to the destructor.
+
+Run the unit tests with sanitizers enabled.  Fix any clear errors.  Pay extra attention when moving the types around.
+
+(It's likely you'll have no problems, but you want to be sure with this one)
+
+## Assignment 8.2.1
+
+### Exercise 1
+
+Create a function that takes universal reference as is argument (template T&&) to print out
+whether or not its argument is an lvalue reference or an rvalue reference
+
+Make a program and call the function to demonstrate both cases.
+
+### Exercise 2
+
+Create a class with following properties:
+
+Has template parameter that enables or disables console output
+Counts number of calls to
+Default constructor
+Copy constructor
+Move constructor
+Destructor
+If enabed, prints out when its constructor / destructor is called
+This kind of class will be your friend while debugging.
+
+### Exercise 3
+
+Earlier (in Assignment 6.2.1 Exercise 3), we created a class that counted the number of instances created.  Delete the classes copy constructor and implement the move constructor.
+
+(This kind of class is extremely useful when wrapping libraries.  You can avoid user having to deal with library initialisation / destruction by doing the init on the first created instance of a type and then cleaning up when the last goes poof.  If you have tried libraries such as SDL, GLFW, or other low-level windowing libraries, this is the way to go.)
+
+# Build Project
+
+1. Navigate to the project root directory
+
+2. Create a build directory and navigate to it:
+
+```shell
+mkdir build
+cd build
+```
+
+3. Run CMake and build the project:
+
+```shell
+cmake ..
+make
+```
+
+# Run Project
+
+```shell 
+./ValueCopyMove
+```
+
+# Run Unit Tests
+
+```shell 
+../tests/unit_tests_results
+``` 

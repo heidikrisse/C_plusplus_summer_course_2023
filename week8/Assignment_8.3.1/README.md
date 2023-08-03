@@ -60,3 +60,9 @@ make
 ```shell 
 ./HeapArray
 ```
+
+# Run Unit Tests
+
+```shell
+../tests/unit_tests_results
+```

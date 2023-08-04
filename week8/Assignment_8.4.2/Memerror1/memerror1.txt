@@ -1,0 +1,74 @@
+---------- Memerror1 ----------
+
+heidi@UbuntuHeidi:~/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build$ ./Memerror1
+=================================================================
+==31735==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x606000000000 at pc 0x5640cde64b71 bp 0x7ffe5c3733a0 sp 0x7ffe5c373390
+READ of size 8 at 0x606000000000 thread T0
+    #0 0x5640cde64b70 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x5b70)
+    #1 0x5640cde64eac in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_is_local() const (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x5eac)
+    #2 0x5640cde64dbf in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_dispose() (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x5dbf)
+    #3 0x5640cde63b17 in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::~basic_string() (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x4b17)
+    #4 0x5640cde634a1 in object_data::~object_data() (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x44a1)
+    #5 0x5640cde680c8 in void std::destroy_at<object_data>(object_data*) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x90c8)
+    #6 0x5640cde66fe8 in void std::allocator_traits<std::allocator<object_data> >::destroy<object_data>(std::allocator<object_data>&, object_data*) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x7fe8)
+    #7 0x5640cde65d63 in std::vector<object_data, std::allocator<object_data> >::_M_erase(__gnu_cxx::__normal_iterator<object_data*, std::vector<object_data, std::allocator<object_data> > >) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x6d63)
+    #8 0x5640cde648ee in std::vector<object_data, std::allocator<object_data> >::erase(__gnu_cxx::__normal_iterator<object_data const*, std::vector<object_data, std::allocator<object_data> > >) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x58ee)
+    #9 0x5640cde62c1d in large_object::~large_object() (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x3c1d)
+    #10 0x5640cde62dd2 in main (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x3dd2)
+    #11 0x7f48cfa29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #12 0x7f48cfa29e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #13 0x5640cde62564 in _start (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x3564)
+
+0x606000000000 is located 32 bytes to the left of 64-byte region [0x606000000020,0x606000000060)
+allocated by thread T0 here:
+    #0 0x7f48d02b61c7 in operator new(unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:99
+    #1 0x5640cde68b07 in __gnu_cxx::new_allocator<object_data>::allocate(unsigned long, void const*) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x9b07)
+    #2 0x5640cde6853d in std::allocator_traits<std::allocator<object_data> >::allocate(std::allocator<object_data>&, unsigned long) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x953d)
+    #3 0x5640cde67bc1 in std::_Vector_base<object_data, std::allocator<object_data> >::_M_allocate(unsigned long) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x8bc1)
+    #4 0x5640cde66808 in void std::vector<object_data, std::allocator<object_data> >::_M_realloc_insert<object_data>(__gnu_cxx::__normal_iterator<object_data*, std::vector<object_data, std::allocator<object_data> > >, object_data&&) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x7808)
+    #5 0x5640cde657b2 in object_data& std::vector<object_data, std::allocator<object_data> >::emplace_back<object_data>(object_data&&) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x67b2)
+    #6 0x5640cde64423 in std::vector<object_data, std::allocator<object_data> >::push_back(object_data&&) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x5423)
+    #7 0x5640cde6283c in large_object::large_object() (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x383c)
+    #8 0x5640cde62dab in main (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x3dab)
+    #9 0x7f48cfa29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build/Memerror1+0x5b70) in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_data() const
+Shadow bytes around the buggy address:
+  0x0c0c7fff7fb0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c0c7fff7fc0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c0c7fff7fd0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c0c7fff7fe0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x0c0c7fff7ff0: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x0c0c7fff8000:[fa]fa fa fa 00 00 00 00 00 00 00 00 fa fa fa fa
+  0x0c0c7fff8010: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0c7fff8020: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0c7fff8030: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0c7fff8040: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x0c0c7fff8050: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+  Shadow gap:              cc
+==31735==ABORTING
+
+---------- Corrected -----------
+
+heidi@UbuntuHeidi:~/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror1/build$ ./Memerror1
+
+<empty, no printing but no errors>

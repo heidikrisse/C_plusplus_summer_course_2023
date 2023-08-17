@@ -37,9 +37,9 @@ public:
     }
 
     // Deallocate memory for destructing object
-    void deallocate(T *p, std::size_t n)
+    void deallocate(T *p, std::size_t)
     {
-        //
+        p->~T();
     }
 
     // Compare allocators (always return true since we have a single block of memory)

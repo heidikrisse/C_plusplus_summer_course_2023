@@ -1,0 +1,1 @@
+add_library(json_file_handling STATIC json_file_handling.cpp)

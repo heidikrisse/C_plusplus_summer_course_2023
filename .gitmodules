@@ -1,3 +1,6 @@
 [submodule "week1/Assignment_2_2_2/Exercise_1-4/external/cxxopts"]
 	path = week1/Assignment_2_2_2/Exercise_1-4/external/cxxopts
 	url = https://github.com/jarro2783/cxxopts.git
+[submodule "week9/Assignment_9.4.2/include/expected"]
+	path = week9/Assignment_9.4.2/include/expected
+	url = https://github.com/TartanLlama/expected.git

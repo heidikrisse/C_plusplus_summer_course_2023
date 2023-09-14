@@ -1,0 +1,51 @@
+---------- Memerror2 ----------
+
+----------With int: ----------
+
+heidi@UbuntuHeidi:~/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build$ ./Memerror2
+0
+1
+2
+3
+4
+0
+1
+2
+3
+4
+
+---------- With std::string: ----------
+
+heidi@UbuntuHeidi:~/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build$ ./Memerror2
+AddressSanitizer:DEADLYSIGNAL
+=================================================================
+==33008==ERROR: AddressSanitizer: SEGV on unknown address 0x000000000001 (pc 0x7fa2c7ac4a68 bp 0x7fff01d57da0 sp 0x7fff01d57d78 T0)
+==33008==The signal is caused by a WRITE memory access.
+==33008==Hint: address points to the zero page.
+    #0 0x7fa2c7ac4a68  (/lib/x86_64-linux-gnu/libc.so.6+0xc4a68)
+    #1 0x56116fc15f6e in std::char_traits<char>::copy(char*, char const*, unsigned long) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build/Memerror2+0x3f6e)
+    #2 0x56116fc17b5f in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::_S_copy(char*, char const*, unsigned long) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build/Memerror2+0x5b5f)
+    #3 0x56116fc1702a in std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >::operator=(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >&&) (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build/Memerror2+0x502a)
+    #4 0x56116fc15848 in main (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build/Memerror2+0x3848)
+    #5 0x7fa2c7a29d8f in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #6 0x7fa2c7a29e3f in __libc_start_main_impl ../csu/libc-start.c:392
+    #7 0x56116fc15544 in _start (/home/heidi/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build/Memerror2+0x3544)
+
+AddressSanitizer can not provide additional info.
+SUMMARY: AddressSanitizer: SEGV (/lib/x86_64-linux-gnu/libc.so.6+0xc4a68) 
+==33008==ABORTING
+
+---------- Corrected with std::string: ----------
+
+heidi@UbuntuHeidi:~/projects/C_plusplus_summer_course_2023/week8/Assignment_8.4.2/Memerror2/build$ ./Memerror2
+Element 0
+Element 1
+Element 2
+Element 3
+Element 4
+Element 0
+Element 1
+Element 2
+Element 3
+Element 4
+

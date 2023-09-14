@@ -1,0 +1,14 @@
+Customer Number: 1
+Name: Aku Ankka
+Address: Paratiisitie 13
+Phone Number: 1234567890
+Account Number: 101
+Balance: 500
+
+Customer Number: 2
+Name: Super Man
+Address: Clinton Street 344
+Phone Number: 0987654321
+Account Number: 201
+Balance: 1000
+

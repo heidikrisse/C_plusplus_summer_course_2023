@@ -1,0 +1,1 @@
+add_library(tagged_union_variant STATIC tagged_union_variant.cpp)
